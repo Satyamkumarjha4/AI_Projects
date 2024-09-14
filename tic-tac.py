@@ -52,7 +52,7 @@ def check_winner_on_board(board):
     if board[0][0] == board[1][1] == board[2][2] != '':
         return board[0][0]
     if board[0][2] == board[1][1] == board[2][0] != '':
-        return board[0][2]
+            return board[0][2]
     return None
 
 def ai_random_move():
@@ -209,6 +209,10 @@ def main():
     if st.session_state.mode == 'Single Player':
         # Difficulty level for single player
         st.session_state.level = st.selectbox("AI Difficulty:", ['easy', 'medium', 'hard'])
+
+    # Reset button (always available)
+    if st.button('Reset'):
+        clear_board()
 
     # Display the board and manage the game state
     print_board()
